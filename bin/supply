@@ -1,0 +1,27 @@
+#!/usr/bin/env approuter
+
+#sync output
+
+$stdout.sync = true
+
+build_path = ARGV[0]
+cache_path = ARGV[1]
+deps_path = ARGV[2]
+index = ARGV[3]
+
+install_approuter
+
+private
+
+def install_approuter
+  puts "Installing Approuter Dependencies"
+  mkdir -p "${DEPS_DIR}/${INDEX}"
+  NODE_MODULES_URL=https://github.wdf.sap.corp/html5-apps-repo/approuter-buildpack/blob/master/dependencies/node_modules.tgz
+  echo "Downloading Approuter node_modules ${APPROUTER_VERSION}: ${NODE_MODULES_URL}"
+
+  wget "${NODE_MODULES_URL}" -O "${DEPS_DIR}/${INDEX}/node_modules.tgz" -q
+
+  echo "Extracting Approuter node_modules tgz..."
+  cd "${DEPS_DIR}/${INDEX}" && tar zxvf node_modules.tgz
+
+end

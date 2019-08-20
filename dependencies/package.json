@@ -1,0 +1,12 @@
+{
+	"name": "dyn-dest-approuter",
+	"engines": {
+		"node": "^8.0.0"
+	},
+	"dependencies": {
+		"@sap/approuter": "git://github.wdf.sap.corp/xs2/approuter.js#allowed-dyn-destinations"
+	},
+	"scripts": {
+		"start": "node --inspect node_modules/@sap/approuter/approuter.js"
+	}
+}
