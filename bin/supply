@@ -16,7 +16,7 @@ private
 def install_approuter
   puts "Installing Approuter Dependencies"
   mkdir -p "${DEPS_DIR}/${INDEX}"
-  NODE_MODULES_URL=https://github.wdf.sap.corp/html5-apps-repo/approuter-buildpack/blob/master/dependencies/node_modules.tgz
+  NODE_MODULES_URL=https://github.com/sergioRozenszajn/approuter-buildpack/blob/master/dependencies/node_modules.tgz
   echo "Downloading Approuter node_modules ${APPROUTER_VERSION}: ${NODE_MODULES_URL}"
 
   wget "${NODE_MODULES_URL}" -O "${DEPS_DIR}/${INDEX}/node_modules.tgz" -q
